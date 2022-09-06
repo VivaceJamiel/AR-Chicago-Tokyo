@@ -7,8 +7,7 @@ using UnityEngine.Networking;
 
 public class WeatherAPIScript : MonoBehaviour
 {
-    string url = "http://api.openweathermap.org/data/2.5/weather?lat=41.88&lon=-87.6&APPID=20e90bbe908bc85c798290f956bce23e&units=imperial";
-
+    string url = "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=20e90bbe908bc85c798290f956bce23e";
 
     void Start()
     {
