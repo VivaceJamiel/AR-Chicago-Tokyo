@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 388
     height: 730.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 281.6
     height: 412
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Chicago/Fountain
+    - Assets/Script
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Chicago/Fountain
+  - Assets/Script
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jamiel\AR Places Chicago-Tokyo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a6b0000
-    m_LastClickedID: 27418
-    m_ExpandedIDs: 0000000092650000946500009665000098650000e865000000ca9a3b
+    scrollPos: {x: 0, y: 62.200012}
+    m_SelectedIDs: b6690000
+    m_LastClickedID: 27062
+    m_ExpandedIDs: 00000000b0650000b2650000b4650000b6650000026600004069000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000092650000946500009665000098650000
+    m_ExpandedIDs: 00000000b0650000b2650000b4650000b6650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -490,7 +490,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b0b0ffff02e1ffff32fbffffd65d0000065e0000225e00008a610000
+      m_ExpandedIDs: 5cf6ffff32fbffff285e00007a5e0000865e00008a5e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -739,9 +739,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.3839401, y: 0.591979, z: 0.32871354}
+    m_Target: {x: -0.34293067, y: 0.5013429, z: -0.21053085}
     speed: 2
-    m_Value: {x: 1.3839401, y: 0.591979, z: 0.32871354}
+    m_Value: {x: -0.34293067, y: 0.5013429, z: -0.21053085}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -788,13 +788,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.21749575, y: -0.2651934, z: 0.061530553, w: 0.93734604}
+    m_Target: {x: -0.4208845, y: -0.045958333, z: 0.021351222, w: -0.9057434}
     speed: 2
-    m_Value: {x: 0.21758395, y: -0.2637824, z: 0.061203152, w: 0.93772614}
+    m_Value: {x: -0.4208346, y: -0.047314942, z: 0.021981616, w: -0.90563595}
   m_Size:
-    m_Target: 1.7214804
+    m_Target: 1.2491122
     speed: 2
-    m_Value: 1.7201902
+    m_Value: 1.2491122
   m_Ortho:
     m_Target: 0
     speed: 2
