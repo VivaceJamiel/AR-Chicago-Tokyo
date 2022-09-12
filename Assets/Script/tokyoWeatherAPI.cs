@@ -7,17 +7,17 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 using System;
 using Unity.VisualScripting.Antlr3.Runtime;
 using Unity.VisualScripting;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
-
-public class WeatherAPIScript : MonoBehaviour
+public class tokyoWeatherAPI : MonoBehaviour
 {
-    string url = "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=20e90bbe908bc85c798290f956bce23e";
+    string url = "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=20e90bbe908bc85c798290f956bce23e&units=imperial";
+
+    public GameObject weatherText;
 
     void Start()
     {
-
-        // wait a couple seconds to start and then refresh every 900 seconds
-
         InvokeRepeating("GetDataFromWeb", 2f, 900f);
     }
 
@@ -41,7 +41,17 @@ public class WeatherAPIScript : MonoBehaviour
             else
             {
                 // print out the weather data to make sure it makes sense
-                Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
+                //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
+                //Debug.Log(":\nReceived: " + webRequest);
+                var data = webRequest.downloadHandler.text;
+                var weatherResult = JObject.Parse(data).GetValue("weather").ToString();
+                var weatherData = JObject.Parse(weatherResult).GetValue("main");
+
+                var tempResult = JObject.Parse(data).GetValue("main").ToString();
+                var tempData = JObject.Parse(tempResult).GetValue("temp");
+                Debug.Log(tempData);
+                Debug.Log(weatherData);
+                var weatherString = tempData + "F\n" + weatherData;
             }
         }
     }
