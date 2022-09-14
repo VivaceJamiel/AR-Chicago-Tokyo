@@ -10,7 +10,7 @@ using Unity.VisualScripting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-public class tokyoWeatherAPI : MonoBehaviour
+public class TokyoWeather : MonoBehaviour
 {
     string url = "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=20e90bbe908bc85c798290f956bce23e&units=metric";
 
@@ -54,8 +54,6 @@ public class tokyoWeatherAPI : MonoBehaviour
                 var intTemp = decimal.Round(decTemp);
 
                 var weatherString = intTemp + "ÅãC\n" + weatherData;
-
-                Debug.Log(weatherString);
 
                 weatherText.GetComponent<TextMeshPro>().text = weatherString;
             }

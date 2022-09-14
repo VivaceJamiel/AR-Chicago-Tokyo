@@ -6,15 +6,15 @@ using Newtonsoft.Json.Linq;
 using UnityEngine.Networking;
 using System;
 
-public class timeTeller : MonoBehaviour
+public class TokyoTime : MonoBehaviour
 {
     public GameObject timeTextObject;
-    string tokyoURL = "http://worldtimeapi.org/api/timezone/Asia/Tokyo.txt";
+    string tokyoURL = "http://worldtimeapi.org/api/timezone/Asia/Tokyo";
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("GetDataFromWeb", 2f, 900f);
+        InvokeRepeating("GetDataFromWeb", 0.1f, 60f);
     }
 
     void GetDataFromWeb()
@@ -35,13 +35,10 @@ public class timeTeller : MonoBehaviour
             }
             else
             {
-                // print out the weather data to make sure it makes sense
-                //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
-                //Debug.Log(":\nReceived: " + webRequest);
-                var data = webRequest.downloadHandler.text;
-                Debug.Log(data);
+                var tokyoData = webRequest.downloadHandler.text;
+                var time = tokyoData.Substring(97, 5);
+                timeTextObject.GetComponent<TextMeshPro>().text = time;
             }
         }
-        timeTextObject.GetComponent<TextMeshPro>().text = DateTime.Now.ToString("h:mm tt");
     }
 }

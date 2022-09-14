@@ -1,16 +1,12 @@
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.Networking;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
-using System;
-using Unity.VisualScripting.Antlr3.Runtime;
-using Unity.VisualScripting;
-using Newtonsoft.Json.Linq;
 
-
-public class chicagoWeatherAPI : MonoBehaviour
+public class ChicagoWeather : MonoBehaviour
 {
     string url = "https://api.openweathermap.org/data/2.5/weather?q=Chicago&appid=20e90bbe908bc85c798290f956bce23e&units=imperial";
 
@@ -55,10 +51,9 @@ public class chicagoWeatherAPI : MonoBehaviour
 
                 var weatherString = intTemp + "ÅãF\n" + weatherData;
 
-                Debug.Log(weatherString);
-
                 weatherText.GetComponent<TextMeshPro>().text = weatherString;
             }
         }
     }
+
 }
