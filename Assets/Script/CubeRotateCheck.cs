@@ -5,6 +5,8 @@ using UnityEngine;
 public class CubeRotateCheck : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject cube;
+
     void Start()
     {
         

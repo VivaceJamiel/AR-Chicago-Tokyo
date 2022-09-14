@@ -12,13 +12,13 @@ using Newtonsoft.Json.Linq;
 
 public class tokyoWeatherAPI : MonoBehaviour
 {
-    string url = "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=20e90bbe908bc85c798290f956bce23e&units=imperial";
+    string url = "https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=20e90bbe908bc85c798290f956bce23e&units=metric";
 
     public GameObject weatherText;
 
     void Start()
     {
-        InvokeRepeating("GetDataFromWeb", 2f, 900f);
+        InvokeRepeating("GetDataFromWeb", 2f, 600f);
     }
 
     void GetDataFromWeb()
@@ -40,18 +40,24 @@ public class tokyoWeatherAPI : MonoBehaviour
             }
             else
             {
-                // print out the weather data to make sure it makes sense
-                //Debug.Log(":\nReceived: " + webRequest.downloadHandler.text);
-                //Debug.Log(":\nReceived: " + webRequest);
                 var data = webRequest.downloadHandler.text;
-                var weatherResult = JObject.Parse(data).GetValue("weather").ToString();
-                var weatherData = JObject.Parse(weatherResult).GetValue("main");
 
+                // Get what the weather is
+                var weatherResult = JObject.Parse(data).GetValue("weather").ToString();
+                weatherResult = weatherResult.Substring(1, weatherResult.Length - 3);
+                var weatherData = JObject.Parse(weatherResult).GetValue("main").ToString();
+
+                // Get the temperature
                 var tempResult = JObject.Parse(data).GetValue("main").ToString();
                 var tempData = JObject.Parse(tempResult).GetValue("temp");
-                Debug.Log(tempData);
-                Debug.Log(weatherData);
-                var weatherString = tempData + "F\n" + weatherData;
+                var decTemp = Convert.ToDecimal(tempData);
+                var intTemp = decimal.Round(decTemp);
+
+                var weatherString = intTemp + "ÅãC\n" + weatherData;
+
+                Debug.Log(weatherString);
+
+                weatherText.GetComponent<TextMeshPro>().text = weatherString;
             }
         }
     }
