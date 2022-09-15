@@ -35,18 +35,18 @@ public class TokyoRotate : MonoBehaviour
     void Update()
     {
         zRotate = cube.transform.localRotation.eulerAngles.z;
-        if (zRotate > 160 && zRotate < 200 && !upsideDown && !lightToggle)
+        if (zRotate > 170 && zRotate < 190 && !upsideDown && !lightToggle)
         {
             Debug.Log("UPSIDE DOWN TRIGGERED, SWITCHING LIGHT");
             switchLight();
             upsideDown = true;
             lightToggle = true;
         }
-        else if (zRotate < 160 || zRotate > 200 && upsideDown)
+        else if (zRotate < 170 || zRotate > 190 && upsideDown)
         {
             upsideDown = false;
         }
-        else if (zRotate > 160 && zRotate < 200 && lightToggle && !upsideDown)
+        else if (zRotate > 170 && zRotate < 190 && lightToggle && !upsideDown)
         {
             Debug.Log("UPSIDE DOWN TRIGGERED, SWITCHING OFF LIGHT");
             switchLight();
