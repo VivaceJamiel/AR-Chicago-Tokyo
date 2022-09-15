@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tokyo.unity
+    guid: 3eea271c5971d8c4b8bed6f0875ac899
   m_configObjects: {}
