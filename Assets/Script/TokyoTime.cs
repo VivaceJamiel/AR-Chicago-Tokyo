@@ -36,7 +36,8 @@ public class TokyoTime : MonoBehaviour
             else
             {
                 var tokyoData = webRequest.downloadHandler.text;
-                var time = tokyoData.Substring(75, 5);
+                var subString = tokyoData.IndexOf('T', 30);
+                var time = tokyoData.Substring(subString+1, 5);
                 timeTextObject.GetComponent<TextMeshPro>().text = time;
             }
         }

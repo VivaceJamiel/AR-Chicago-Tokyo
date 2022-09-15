@@ -37,9 +37,8 @@ public class ChicagoTime : MonoBehaviour
             {
                 // print out the weather data to make sure it makes sense
                 var chicagoData = webRequest.downloadHandler.text;
-                var datetime = chicagoData.Substring(75, 21);
-                Debug.Log(chicagoData);
-                Debug.Log(datetime);
+                var subString = chicagoData.IndexOf('T', 30);
+                var datetime = chicagoData.Substring(subString + 1, 21);
                 var time = DateTime.Parse(datetime).ToString("hh:mm tt");
                 timeTextObject.GetComponent<TextMeshPro>().text = time;
             }
